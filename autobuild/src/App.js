@@ -7,7 +7,10 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [htmlHistory, setHtmlHistory] = useState([]);
   const [histIndex, setHistIndex] = useState(0);
-  const url = "https://shreyj1729--autobuild-run-query-dev.modal.run";
+  const url =
+    !process.env.NODE_ENV || process.env.NODE_ENV === "development"
+      ? "https://shreyj1729--autobuild-run-query-dev.modal.run"
+      : "https://shreyj1729--autobuild-run-query.modal.run";
 
   const handleSendMessage = (message) => {
     if (!message) return;
