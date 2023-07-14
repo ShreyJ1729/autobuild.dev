@@ -7,6 +7,8 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [htmlHistory, setHtmlHistory] = useState([]);
   const [histIndex, setHistIndex] = useState(0);
+  const [copied, setCopied] = useState(false);
+
   const url =
     !process.env.NODE_ENV || process.env.NODE_ENV === "development"
       ? "https://shreyj1729--autobuild-run-query-dev.modal.run"
@@ -173,9 +175,13 @@ function App() {
           className="flex items-center justify-center mx-3 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none bg-gray-500 text-white hover:bg-gray-600"
           onClick={() => {
             navigator.clipboard.writeText(resultHTML);
+            setCopied(true);
+            setTimeout(() => {
+              setCopied(false);
+            }, 1000);
           }}
         >
-          Copy HTML
+          {copied ? "Copied!" : "Copy HTML"}
         </button>
       </div>
     </>
