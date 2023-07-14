@@ -169,6 +169,14 @@ function App() {
             </svg>
           </div>
         </div>
+        <button
+          className="flex items-center justify-center mx-3 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none bg-gray-500 text-white hover:bg-gray-600"
+          onClick={() => {
+            navigator.clipboard.writeText(resultHTML);
+          }}
+        >
+          Copy HTML
+        </button>
       </div>
     </>
   );
