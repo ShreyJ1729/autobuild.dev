@@ -146,7 +146,7 @@ function App() {
           <input
             type="text"
             className="px-4 py-2 border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none w-full"
-            placeholder="Enter text..."
+            placeholder="Build me a..."
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onKeyDown={(e) =>
